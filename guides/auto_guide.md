@@ -13,7 +13,7 @@ run it. if you cannot get it to sync. got to windows start and type:
 %appdata% 
 you should see "roaming" click on it. it will take you to a folder.
 
-find the "VET" folder and double click on it.
+find the "h2ocore" folder and double click on it.
 right click on "h2o.conf" and open it with notepad or any text editor.
 When file is loaded, add more nodes by copy and paste this:
 
