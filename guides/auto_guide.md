@@ -7,7 +7,8 @@ Windows wallet setup
 -----------------------------
 
 Download windows wallet from these locations:
-for 32bit: 
+for 32bit(should work on 64 bit system ): 
+https://github.com/h2ocore/h2o/releases/tag/v0.12.1.7
 
 run it. if you cannot get it to sync. got to windows start and type:
 %appdata% 
@@ -58,7 +59,7 @@ when asked to paste genkey. right click to paste your genkey in.
 Windows wallet to add masternode 
 ---------------------------------
 
-1.   Open the VET Coin Desktop Wallet. 
+1.   Open the H2O Coin Desktop Wallet. 
 2.   Go to RECEIVE and create a New Address: MN1 
 3.   Send 15000 H2O to MN1. 
 4.   Wait for confirmations. 
