@@ -47,7 +47,7 @@ now move on to linux vps setup.
 Log into your linux Vps and copy the below lines and press enter:
 
 ```
-bash -c "$(wget -O - https://raw.githubusercontent.com/telostia/h2o-guides/master/guides/install_h2o_mn.sh)"
+bash -c "$(wget -O - https://raw.githubusercontent.com/telostia/h2o-guides/master/guides/h2o_install_mn.sh)"
 ```
 
 when asked to paste genkey. right click to paste your genkey in.
