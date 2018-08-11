@@ -18,16 +18,12 @@ find the "h2ocore" folder and double click on it.
 right click on "h2o.conf" and open it with notepad or any text editor.
 When file is loaded, add more nodes by copy and paste this:
 
-* addnode=139.99.160.230
-* addnode=139.99.160.231
-* addnode=139.99.160.232
-* addnode=212.237.14.146
-* addnode=80.211.178.10
-* addnode=63.209.33.241
-* addnode=149.28.97.202
-* addnode=47.104.173.57
-* addnode=14.241.167.116
-* addnode=45.33.41.172
+* addnode=108.61.219.28:13355
+* addnode=140.82.52.45:13355
+* addnode=104.207.145.111:13355
+* addnode=80.210.127.1:13355
+* addnode=80.210.127.2:13355
+* addnode=80.210.127.3:13355
 
 save file and exit.
 
@@ -47,9 +43,9 @@ now move on to linux vps setup.
 
 Log into your linux Vps and copy the below lines and press enter:
 
-```
-bash -c "$(wget -O - https://raw.githubusercontent.com/telostia/h2o-guides/master/guides/h2o_install_mn.sh)"
-```
+
+* bash -c "$(wget -O - https://raw.githubusercontent.com/telostia/h2o-guides/master/guides/h2o_auto.sh)"
+
 
 when asked to paste genkey. right click to paste your genkey in.
 
@@ -61,7 +57,7 @@ Windows wallet to add masternode
 
 1.   Open the H2O Coin Desktop Wallet. 
 2.   Go to RECEIVE and create a New Address: MN1 
-3.   Send 15000 H2O to MN1. 
+3.   Send 1000 H2O to MN1. 
 4.   Wait for confirmations. 
 5.   Go to Tools -> "Debug console - Console" 
 6.   Type the following command: masternode outputs 
