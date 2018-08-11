@@ -18,14 +18,15 @@ sudo apt-get install libdb4.8-dev libdb4.8++-dev -y
 #get ip lib
 sudo apt install libwww-perl -y
 
-cd
+sudo cd
 #get wallet files
-wget https://raw.githubusercontent.com/telostia/h2o-guides/master/wallet/linux/h2o-linux.tar.gz
-tar -xvf h2o-linux.tar.gz
-rm h2o-linux.tar.gz h2o_auto.sh
-chmod +x h2o*
-cp h2o* /usr/local/bin
-ufw allow 13355/tcp
+sudo wget https://raw.githubusercontent.com/telostia/h2o-guides/master/wallet/linux/h2o-linux.tar.gz
+sudo tar -xvf h2o-linux.tar.gz
+sudo rm h2o-linux.tar.gz
+sudo rm h2o_auto.sh
+sudo chmod +x h2o*
+sudo cp h2o* /usr/local/bin
+sudo ufw allow 13355/tcp
 
 #masternode input
 
@@ -38,7 +39,9 @@ PASSW=`pwgen -1 20 -n`
 
 echo -e "${GREEN}Preparing config file ${NONE}";
 
-rm -rf $HOME/.h2ocore
+#copy wallet.da to /root incase it is being used as a pos on vps...
+sudo cp $HOME/.h2ocore/wallet.dat /root/
+sudo rm -rf $HOME/.h2ocore
 sudo mkdir $HOME/.h2ocore
 
 printf "addnode=108.61.219.28:13355\naddnode=140.82.52.45:13355\naddnode=104.207.145.111:13355\naddnode=80.210.127.1:13355\naddnode=80.210.127.2:13355\naddnode=80.210.127.3:13355\n\nrpcuser=h2o$USER\nrpcpassword=$PASSW\nrpcport=13356\nrpcallowip=127.0.0.1\ndaemon=1\nlisten=1\nserver=1\nmaxconnections=256\nexternalip=$EXTIP:13355\nmasternode=1\nmasternodeprivkey=$MNKEY" >  $HOME/.h2ocore/h2o.conf
