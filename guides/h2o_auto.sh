@@ -20,29 +20,30 @@ sudo apt install libwww-perl -y
 
 cd
 #get wallet files
-wget https://raw.githubusercontent.com/telostia/vetani2-guides/master/wallet/linux/vetani_linux.tar.gz
-tar -xvf vetani_linux.tar.gz
-rm vetani_linux.tar.gz vetani_auto.sh
-chmod +x vetani*
-cp vetani* /usr/local/bin
-ufw allow 1977/tcp
+wget https://raw.githubusercontent.com/telostia/h2o-guides/master/wallet/linux/h2o-linux.tar.gz
+tar -xvf h2o-linux.tar.gz
+rm h2o-linux.tar.gz h2o_auto.sh
+chmod +x h2o*
+cp h2o* /usr/local/bin
+ufw allow 13355/tcp
 
 #masternode input
 
 echo -e "${GREEN}Now paste your Masternode key by using right mouse click and press ENTER ${NONE}";
 read MNKEY
 
-EXTIP=`lwp-request -o text checkip.dyndns.org | awk '{ print $NF }'`
+EXTIP=`curl -s4 icanhazip.com`
+USER=`pwgen -1 20 -n`
 PASSW=`pwgen -1 20 -n`
 
 echo -e "${GREEN}Preparing config file ${NONE}";
 
-rm -rf $HOME/.vetani
-sudo mkdir $HOME/.vetani
+rm -rf $HOME/.h2ocore
+sudo mkdir $HOME/.h2ocore
 
-printf "addnode=140.82.11.216:38221\naddnode=149.28.178.170:38221\naddnode=209.250.241.120:38221\naddnode=185.162.130.170:38221\naddnode=85.25.94.7:38221\naddnode=5.9.180.148:38221\naddnode=95.179.140.249:38221\naddnode=104.237.149.64:38221\naddnode=185.233.105.172:38221\naddnode=45.76.146.140:38221\naddnode=185.53.191.78:38221\n\nrpcuser=vetani432345$PASSW\nrpcpassword=$PASSW\nrpcport=1977\nrpcallowip=127.0.0.1\ndaemon=1\nlisten=1\nserver=1\nmaxconnections=256\nexternalip=$EXTIP:38221\nmasternode=1\nmasternodeprivkey=$MNKEY" >  $HOME/.vetani/vetani.conf
+printf "addnode=108.61.219.28:13355\naddnode=140.82.52.45:13355\naddnode=104.207.145.111:13355\naddnode=80.210.127.1:13355\naddnode=80.210.127.2:13355\naddnode=addnode=80.210.127.3:13355\n\nrpcuser=h2o$USER\nrpcpassword=$PASSW\nrpcport=13355\nrpcallowip=127.0.0.1\ndaemon=1\nlisten=1\nserver=1\nmaxconnections=256\nexternalip=$EXTIP:13355\nmasternode=1\nmasternodeprivkey=$MNKEY" >  $HOME/.h2ocore/h2o.conf
 
 
-vetanid -daemon
-watch vetani-cli getinfo
+h2od -daemon
+watch h2o-cli getinfo
 
