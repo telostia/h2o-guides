@@ -41,7 +41,7 @@ echo -e "${GREEN}Preparing config file ${NONE}";
 rm -rf $HOME/.h2ocore
 sudo mkdir $HOME/.h2ocore
 
-printf "addnode=108.61.219.28:13355\naddnode=140.82.52.45:13355\naddnode=104.207.145.111:13355\naddnode=80.210.127.1:13355\naddnode=80.210.127.2:13355\naddnode=addnode=80.210.127.3:13355\n\nrpcuser=h2o$USER\nrpcpassword=$PASSW\nrpcport=13355\nrpcallowip=127.0.0.1\ndaemon=1\nlisten=1\nserver=1\nmaxconnections=256\nexternalip=$EXTIP:13355\nmasternode=1\nmasternodeprivkey=$MNKEY" >  $HOME/.h2ocore/h2o.conf
+printf "addnode=108.61.219.28:13355\naddnode=140.82.52.45:13355\naddnode=104.207.145.111:13355\naddnode=80.210.127.1:13355\naddnode=80.210.127.2:13355\naddnode=80.210.127.3:13355\n\nrpcuser=h2o$USER\nrpcpassword=$PASSW\nrpcport=13356\nrpcallowip=127.0.0.1\ndaemon=1\nlisten=1\nserver=1\nmaxconnections=256\nexternalip=$EXTIP:13355\nmasternode=1\nmasternodeprivkey=$MNKEY" >  $HOME/.h2ocore/h2o.conf
 
 
 h2od -daemon
