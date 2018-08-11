@@ -7,8 +7,8 @@ Windows wallet setup
 -----------------------------
 
 Download windows wallet from these locations:
-for 32bit(should work on 64 bit system ): 
-https://github.com/h2ocore/h2o/releases/tag/v0.12.1.7
+for 32bit(should work on 64 bit system ): latest right now is .18 
+* https://github.com/h2ocore/h2o/releases
 
 run it. if you cannot get it to sync. got to windows start and type:
 %appdata% 
